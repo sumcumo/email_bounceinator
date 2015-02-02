@@ -1,6 +1,9 @@
 # EmailBounceinator
 
-TODO: Write a gem description
+THIS IS WIP AND NOT EVEN ALPHA
+
+This gem will be used to detect and handle email bounces in an IMAP mailbox. It will be usable
+on the command line and in Ruby on Rails.
 
 ## Installation
 
@@ -20,7 +23,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+tba
 
 ## Contributing
 
