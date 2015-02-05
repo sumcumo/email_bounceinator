@@ -1,3 +1,18 @@
 #!/usr/bin/env ruby
 
 require_relative '../lib/email_bounceinator'
+require 'yaml'
+
+path_to_config = Pathname(Pathname.getwd).join('email_bounceinator.yml')
+config_yaml = YAML.load_file(path_to_config)
+
+EmailBounceinator.configure do |config|
+  config.imap_mailbox   = config_yaml['imap_mailbox']
+  config.imap_hostname  = config_yaml['imap_hostname']
+  config.imap_ssl       = config_yaml['imap_ssl']
+  config.imap_username  = config_yaml['imap_username']
+  config.imap_password  = config_yaml['imap_password']
+end
+
+puts EmailBounceinator::ImapMailbox.new.all
+
